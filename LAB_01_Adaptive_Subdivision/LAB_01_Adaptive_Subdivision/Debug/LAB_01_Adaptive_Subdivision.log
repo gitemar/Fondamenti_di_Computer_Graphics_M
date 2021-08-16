@@ -1,0 +1,4 @@
+﻿  LAB_01_Adaptive_Subdivision.cpp
+C:\Users\elena\source\repos\LAB_01_Adaptive_Subdivision\LAB_01_Adaptive_Subdivision\LAB_01_Adaptive_Subdivision.cpp(132,9): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\elena\source\repos\LAB_01_Adaptive_Subdivision\LAB_01_Adaptive_Subdivision\LAB_01_Adaptive_Subdivision.cpp(416,14): warning C4244: 'inizializzazione': conversione da 'double' a 'float'. Possibile perdita di dati.
+  LAB_01_Adaptive_Subdivision.vcxproj -> C:\Users\elena\source\repos\LAB_01_Adaptive_Subdivision\Debug\LAB_01_Adaptive_Subdivision.exe
