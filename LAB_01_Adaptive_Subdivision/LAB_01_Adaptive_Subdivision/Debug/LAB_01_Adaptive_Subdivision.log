@@ -1,6 +1,4 @@
 ﻿  LAB_01_Adaptive_Subdivision.cpp
-C:\Users\elena\Documents\GitHub\Fondamenti_di_Computer_Graphics_M\LAB_01_Adaptive_Subdivision\LAB_01_Adaptive_Subdivision\LAB_01_Adaptive_Subdivision.cpp(133,9): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
-C:\Users\elena\Documents\GitHub\Fondamenti_di_Computer_Graphics_M\LAB_01_Adaptive_Subdivision\LAB_01_Adaptive_Subdivision\LAB_01_Adaptive_Subdivision.cpp(417,14): warning C4244: 'inizializzazione': conversione da 'double' a 'float'. Possibile perdita di dati.
-  ShaderMaker.cpp
-  Generazione del codice in corso...
+C:\Users\elena\Documents\GitHub\Fondamenti_di_Computer_Graphics_M\LAB_01_Adaptive_Subdivision\LAB_01_Adaptive_Subdivision\LAB_01_Adaptive_Subdivision.cpp(135,9): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\elena\Documents\GitHub\Fondamenti_di_Computer_Graphics_M\LAB_01_Adaptive_Subdivision\LAB_01_Adaptive_Subdivision\LAB_01_Adaptive_Subdivision.cpp(413,14): warning C4244: 'inizializzazione': conversione da 'double' a 'float'. Possibile perdita di dati.
   LAB_01_Adaptive_Subdivision.vcxproj -> C:\Users\elena\Documents\GitHub\Fondamenti_di_Computer_Graphics_M\LAB_01_Adaptive_Subdivision\Debug\LAB_01_Adaptive_Subdivision.exe

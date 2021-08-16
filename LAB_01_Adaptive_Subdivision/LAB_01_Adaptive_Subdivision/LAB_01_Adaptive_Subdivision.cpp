@@ -128,16 +128,12 @@ void noSubdivisionCurveArray() {
 		CurvePointsArray[NumCurvePts][0] = currentCurvePoint[0];
 		CurvePointsArray[NumCurvePts][1] = currentCurvePoint[1];
 		CurvePointsArray[NumCurvePts][2] = currentCurvePoint[2];
+		
+		printf("For t= %.2f - Point %d: (%f,%f,%f)\n", t, NumCurvePts+1, CurvePointsArray[NumCurvePts][0], CurvePointsArray[NumCurvePts][1], CurvePointsArray[NumCurvePts][2]);
+		
 		NumCurvePts++;
-
 		t = t + increment;
 	}
-
-	printf("Curve points:\n");
-	for (int i = 0; i < NumCurvePts; i++) {
-		printf("Point %d : (%f,%f,%f)\n", i + 1, CurvePointsArray[i][0], CurvePointsArray[i][1], CurvePointsArray[i][2]);
-	}
-
 }
 
 
