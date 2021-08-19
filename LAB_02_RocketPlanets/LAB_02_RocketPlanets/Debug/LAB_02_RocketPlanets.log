@@ -1,0 +1,42 @@
+﻿  LAB_02_RocketPlanets.cpp
+C:\Users\elena\source\repos\LAB_02_RocketPlanets\LAB_02_RocketPlanets\LAB_02_RocketPlanets.cpp(54,102): warning C4305: 'inizializzazione': troncamento da 'double' a 'float'
+C:\Users\elena\source\repos\LAB_02_RocketPlanets\LAB_02_RocketPlanets\LAB_02_RocketPlanets.cpp(142,42): warning C4305: 'inizializzazione': troncamento da 'double' a 'float'
+C:\Users\elena\source\repos\LAB_02_RocketPlanets\LAB_02_RocketPlanets\LAB_02_RocketPlanets.cpp(148,52): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\elena\source\repos\LAB_02_RocketPlanets\LAB_02_RocketPlanets\LAB_02_RocketPlanets.cpp(149,52): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\elena\source\repos\LAB_02_RocketPlanets\LAB_02_RocketPlanets\LAB_02_RocketPlanets.cpp(153,62): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\elena\source\repos\LAB_02_RocketPlanets\LAB_02_RocketPlanets\LAB_02_RocketPlanets.cpp(154,62): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\elena\source\repos\LAB_02_RocketPlanets\LAB_02_RocketPlanets\LAB_02_RocketPlanets.cpp(178,73): warning C4305: 'inizializzazione': troncamento da 'double' a 'float'
+C:\Users\elena\source\repos\LAB_02_RocketPlanets\LAB_02_RocketPlanets\LAB_02_RocketPlanets.cpp(189,67): warning C4305: 'argomento': troncamento da 'double' a 'float'
+C:\Users\elena\source\repos\LAB_02_RocketPlanets\LAB_02_RocketPlanets\LAB_02_RocketPlanets.cpp(200,54): warning C4305: 'argomento': troncamento da 'double' a 'float'
+C:\Users\elena\source\repos\LAB_02_RocketPlanets\LAB_02_RocketPlanets\LAB_02_RocketPlanets.cpp(211,65): warning C4305: 'argomento': troncamento da 'double' a 'float'
+C:\Users\elena\source\repos\LAB_02_RocketPlanets\LAB_02_RocketPlanets\LAB_02_RocketPlanets.cpp(221,66): warning C4305: 'inizializzazione': troncamento da 'double' a 'float'
+C:\Users\elena\source\repos\LAB_02_RocketPlanets\LAB_02_RocketPlanets\LAB_02_RocketPlanets.cpp(228,63): warning C4305: 'inizializzazione': troncamento da 'double' a 'float'
+C:\Users\elena\source\repos\LAB_02_RocketPlanets\LAB_02_RocketPlanets\LAB_02_RocketPlanets.cpp(239,51): warning C4305: 'argomento': troncamento da 'double' a 'float'
+C:\Users\elena\source\repos\LAB_02_RocketPlanets\LAB_02_RocketPlanets\LAB_02_RocketPlanets.cpp(251,51): warning C4305: 'argomento': troncamento da 'double' a 'float'
+C:\Users\elena\source\repos\LAB_02_RocketPlanets\LAB_02_RocketPlanets\LAB_02_RocketPlanets.cpp(262,54): warning C4305: 'argomento': troncamento da 'double' a 'float'
+C:\Users\elena\source\repos\LAB_02_RocketPlanets\LAB_02_RocketPlanets\LAB_02_RocketPlanets.cpp(271,47): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\elena\source\repos\LAB_02_RocketPlanets\LAB_02_RocketPlanets\LAB_02_RocketPlanets.cpp(272,47): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\elena\source\repos\LAB_02_RocketPlanets\LAB_02_RocketPlanets\LAB_02_RocketPlanets.cpp(273,47): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\elena\source\repos\LAB_02_RocketPlanets\LAB_02_RocketPlanets\LAB_02_RocketPlanets.cpp(273,110): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\elena\source\repos\LAB_02_RocketPlanets\LAB_02_RocketPlanets\LAB_02_RocketPlanets.cpp(275,47): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\elena\source\repos\LAB_02_RocketPlanets\LAB_02_RocketPlanets\LAB_02_RocketPlanets.cpp(275,110): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\elena\source\repos\LAB_02_RocketPlanets\LAB_02_RocketPlanets\LAB_02_RocketPlanets.cpp(364,73): warning C4305: 'inizializzazione': troncamento da 'double' a 'float'
+C:\Users\elena\source\repos\LAB_02_RocketPlanets\LAB_02_RocketPlanets\LAB_02_RocketPlanets.cpp(461,16): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\elena\source\repos\LAB_02_RocketPlanets\LAB_02_RocketPlanets\LAB_02_RocketPlanets.cpp(461,33): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\elena\source\repos\LAB_02_RocketPlanets\LAB_02_RocketPlanets\LAB_02_RocketPlanets.cpp(582,47): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\elena\source\repos\LAB_02_RocketPlanets\LAB_02_RocketPlanets\LAB_02_RocketPlanets.cpp(583,47): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\elena\source\repos\LAB_02_RocketPlanets\LAB_02_RocketPlanets\LAB_02_RocketPlanets.cpp(584,47): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\elena\source\repos\LAB_02_RocketPlanets\LAB_02_RocketPlanets\LAB_02_RocketPlanets.cpp(584,110): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\elena\source\repos\LAB_02_RocketPlanets\LAB_02_RocketPlanets\LAB_02_RocketPlanets.cpp(586,47): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\elena\source\repos\LAB_02_RocketPlanets\LAB_02_RocketPlanets\LAB_02_RocketPlanets.cpp(586,110): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\elena\source\repos\LAB_02_RocketPlanets\LAB_02_RocketPlanets\LAB_02_RocketPlanets.cpp(607,58): warning C4244: 'argomento': conversione da 'int' a 'float'. Possibile perdita di dati.
+C:\Users\elena\source\repos\LAB_02_RocketPlanets\LAB_02_RocketPlanets\LAB_02_RocketPlanets.cpp(607,45): warning C4244: 'argomento': conversione da 'int' a 'float'. Possibile perdita di dati.
+C:\Users\elena\source\repos\LAB_02_RocketPlanets\LAB_02_RocketPlanets\LAB_02_RocketPlanets.cpp(614,93): warning C4244: 'argomento': conversione da 'int' a 'float'. Possibile perdita di dati.
+C:\Users\elena\source\repos\LAB_02_RocketPlanets\LAB_02_RocketPlanets\LAB_02_RocketPlanets.cpp(614,72): warning C4244: 'argomento': conversione da 'int' a 'float'. Possibile perdita di dati.
+C:\Users\elena\source\repos\LAB_02_RocketPlanets\LAB_02_RocketPlanets\LAB_02_RocketPlanets.cpp(614,51): warning C4244: 'argomento': conversione da 'int' a 'float'. Possibile perdita di dati.
+C:\Users\elena\source\repos\LAB_02_RocketPlanets\LAB_02_RocketPlanets\LAB_02_RocketPlanets.cpp(719,44): warning C4244: '=': conversione da 'double' a 'int'. Possibile perdita di dati.
+C:\Users\elena\source\repos\LAB_02_RocketPlanets\LAB_02_RocketPlanets\LAB_02_RocketPlanets.cpp(724,44): warning C4244: '=': conversione da 'double' a 'int'. Possibile perdita di dati.
+C:\Users\elena\source\repos\LAB_02_RocketPlanets\LAB_02_RocketPlanets\LAB_02_RocketPlanets.cpp(729,40): warning C4244: '=': conversione da 'double' a 'int'. Possibile perdita di dati.
+C:\Users\elena\source\repos\LAB_02_RocketPlanets\LAB_02_RocketPlanets\LAB_02_RocketPlanets.cpp(733,40): warning C4244: '=': conversione da 'double' a 'int'. Possibile perdita di dati.
+C:\Users\elena\source\repos\LAB_02_RocketPlanets\LAB_02_RocketPlanets\LAB_02_RocketPlanets.cpp(889,12): warning C4244: 'argomento': conversione da 'time_t' a 'unsigned int'. Possibile perdita di dati.
+  LAB_02_RocketPlanets.vcxproj -> C:\Users\elena\source\repos\LAB_02_RocketPlanets\Debug\LAB_02_RocketPlanets.exe
