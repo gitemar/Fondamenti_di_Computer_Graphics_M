@@ -274,10 +274,10 @@ void drawRocket(vec4 color_top, vec4 color_middle, vec4 color_center, Point* Roc
 	RocketPolygonHitbox[3].x = (float)posxRocket;								RocketPolygonHitbox[3].y = posyRocket + ((rocket_size));
 	RocketPolygonHitbox[4].x = (float)posxRocket - ((rocket_size) * 0.3); RocketPolygonHitbox[4].y = posyRocket + ((rocket_size)*0.4);
 
-	for (int i = 0; i < 5; i++) {
+	/*for (int i = 0; i < 5; i++) {
 		RocketPolygonHitbox[i].r = 0.0; RocketPolygonHitbox[i].g = 1.0; RocketPolygonHitbox[i].b = 0.0; RocketPolygonHitbox[i].a = 1.0;
 		printf("V1 - x=%.2f , y=%.2f\n", RocketPolygonHitbox[i].x, RocketPolygonHitbox[i].y);
-	}
+	}*/
 }
 
 /*********************************************************************************************************/
@@ -568,7 +568,7 @@ void calculateRocketHitbox(float (*newHit)[2]) {
 	RocketPolygonHitbox[3].x = (float)posxRocket;						  RocketPolygonHitbox[3].y = posyRocket + ((rocket_size));
 	RocketPolygonHitbox[4].x = (float)posxRocket - ((rocket_size) * 0.3); RocketPolygonHitbox[4].y = posyRocket + ((rocket_size) * 0.4);
 
-	printf("Angle: %f\n", angleRotation);
+	/*printf("Angle: %f\n", angleRotation);*/
 	for (int i = 0; i < 5; i++) {
 		newHit[i][0] = RocketPolygonHitbox[i].x - posxRocket;
 		newHit[i][1] = RocketPolygonHitbox[i].y - posyRocket;
