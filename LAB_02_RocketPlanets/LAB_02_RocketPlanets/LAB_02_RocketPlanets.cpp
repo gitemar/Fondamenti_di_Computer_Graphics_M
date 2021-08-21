@@ -801,6 +801,7 @@ void drawScene(void)
 		Model = scale(Model, vec3((float)InfoPlanets[i].scale, (float)InfoPlanets[i].scale, 0.0));
 		Model = rotate(Model, radians(0.0f), vec3(0.0, 0.0, 1.0));
 		glUniformMatrix4fv(MatModel, 1, GL_FALSE, value_ptr(Model));
+		/*glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);*/
 		glDrawArrays(GL_TRIANGLES, planetVertices * i, planetVertices);
 	}
 
