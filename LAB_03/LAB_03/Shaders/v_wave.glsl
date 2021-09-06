@@ -33,6 +33,7 @@ void main()
 	float w=0.001f;
 	float a=0.1f;
 	
+	//the new position depends on amplitude a, w and time t (given by application)
 	v.y = aPos.y + a*(sin(w*time + 10.0*aPos.x)+sin(w*time + 10.0*aPos.z));
 	mat4 ModelViewProjectionMatrix = P * V * M;
 	gl_Position = ModelViewProjectionMatrix * vec4(v,1.0);

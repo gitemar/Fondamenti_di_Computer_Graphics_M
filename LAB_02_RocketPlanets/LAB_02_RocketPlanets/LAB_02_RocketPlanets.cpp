@@ -26,8 +26,9 @@ typedef struct { int posx, posy, scale, direction; }Planet;
 typedef struct { int dir, size; }Star;
 
 static unsigned int programId;
-unsigned int VAO_Rocket, VAO_Planets, VAO_GameoverX, VAO_Stars, VAO_Checkpoint, VAO_WinningTick, VAO_Hitbox;
-unsigned int VBO_Rocket, VBO_Planets, VBO_GameoverX, VBO_Stars, VBO_Checkpoint, VBO_WinningTick,VBO_Hitbox, loc, MatProj, MatModel;
+//ho un VAO e VBO per oggetto, quindi razzo, pianeti, stelle, checkpoint e simboli di vincita e perdita
+unsigned int VAO_Rocket, VAO_Planets, VAO_GameoverX, VAO_Stars, VAO_Checkpoint, VAO_WinningTick, /*VAO_Hitbox*/;
+unsigned int VBO_Rocket, VBO_Planets, VBO_GameoverX, VBO_Stars, VBO_Checkpoint, VBO_WinningTick,/*VBO_Hitbox*/, loc, MatProj, MatModel;
 mat4 Projection;  //Matrice di proiezione
 mat4 Model; //Matrice per il cambiamento di sistema di riferimento: da Sistema diriferimento dell'oggetto a sistema di riferimento nel Mondo
 
@@ -42,26 +43,32 @@ vec4 red = { 1.0f,0.0f,0.0f,1.0f };
 vec4 green = { 0.0f,1.0f,0.0f,1.0f };
 vec4 transparent_black = { 0.0f, 0.0f, 0.0f, 0.7f };
 
+//vertici del razzo
 int nRocketVertices = 3 * (rocketTriangles + (2 * circleTriangles));
 Point* RocketVerts = new Point[nRocketVertices];
 
+//numero vertici dei pianeti
 int planetVertices = circleTriangles * 3 * 5;
 int maxPVertices = planetVertices * maxPlanets;
 
+//array dei vertici dei pianeti
 Point* Planets = new Point[maxPVertices];
 int countPVertices = 0;
 
+//informazioni sulla posizione dei pianeti e la loro dimensione (del main body e dei crateri)
 float planetDraw[][3] = { {0.0,0.0,1.0},{0.2,0.7,0.2},{0.5,0.5,0.08},{-0.3,-0.6,0.15},{0.7,0.0,0.15} };
 int positions[][maxPlanets] = { {200,590},{250,360} ,{510,520},{560,290}, {800,400}, {1040,300}, {1050,560} };
 Planet* InfoPlanets = new Planet[maxPlanets];
 int currentPlanets = 0;
 
+//vertici per segnalare vincita e perdita
 Point* GameoverX = new Point[10];
 
 Point* WinningTick = new Point[12];
 Point* Checkpoint = new Point[circleTriangles * 3];
 int posCheck[2] = { 640, 640 };
 
+//vertici delle stelle
 Point* Stars = new Point[5000];
 Star* InfoStars = new Star[5000];
 int currentStars = 0;
@@ -108,6 +115,7 @@ void drawPlane(float x, float y, float width, float height, vec4 color, Point* p
 	}
 }
 
+//disegno trapezio: si differenzia in trapezio con base minore o base maggiore di partenza (upside)
 void drawTrapez(float x, float y, float width, float height, float bias, vec4 color, Point* piano, bool upside) {
 
 	if (!upside) {
@@ -285,7 +293,7 @@ void drawRocket(vec4 color_top, vec4 color_middle, vec4 color_center, Point* Roc
 /*********************************************************************************************************/
 void drawPlanet(vec4 colorP, vec4 colorO) {
 
-	//Disegno il cerchio principale
+	//Disegno i 5 cerchi che costituiscono il pianeta
 	Point* cerchio = new Point[circleTriangles * 3];
 	int nVertices = 3 * circleTriangles;
 
@@ -306,6 +314,8 @@ void drawPlanet(vec4 colorP, vec4 colorO) {
 	}
 
 	//set transform parameter as random numbers
+	//imposto random la scala del pianeta
+	//imposto anche la direzione iniziale di movimento del pianeta (destra o sinistra) in modo alternato
 	InfoPlanets[currentPlanets].scale = rand() % 30 + 20;
 
 	InfoPlanets[currentPlanets].posx = positions[currentPlanets][0];
@@ -399,7 +409,7 @@ void init(void)
 	glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, 7 * sizeof(float), (void*)(3 * sizeof(float)));
 	glEnableVertexAttribArray(1);
 
-	glGenVertexArrays(1, &VAO_Hitbox);
+	/*glGenVertexArrays(1, &VAO_Hitbox);
 	glBindVertexArray(VAO_Hitbox);
 	glGenBuffers(1, &VBO_Hitbox);
 	glBindBuffer(GL_ARRAY_BUFFER, VBO_Hitbox);
@@ -407,7 +417,7 @@ void init(void)
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 7 * sizeof(float), (void*)0);
 	glEnableVertexAttribArray(0);
 	glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, 7 * sizeof(float), (void*)(3 * sizeof(float)));
-	glEnableVertexAttribArray(1);
+	glEnableVertexAttribArray(1);*/
 
 	printf("\nGenerating...\n");
 	for (int i = 0; i < maxPlanets; i++) {
@@ -454,6 +464,7 @@ void init(void)
 	glEnableVertexAttribArray(1);
 
 	//Stars
+	//per ogni stella, in modo simile a quanto fatto per i pianeti, imposto la direzione di crescita (+1,-1) in modo alternato
 	for (int i = 0; i < 500; i++) {
 		int x = rand() % 1000 + 1; double px = (float)x; px = -1.0f + ((px *2.0f) / 1000.0f);
 		int y = rand() % 1000 + 1; double py = (float)y; py = -1.0f + ((py * 2.0f) / 1000.0f);
@@ -508,6 +519,7 @@ void init(void)
 /*************************************** KEYBOARD EVENT FUNCTIONS ****************************************/
 /*********************************************************************************************************/
 
+//il razzo si sposta con i i tasti 'w','a','s','d'
 void keyboardPressedEvent(unsigned char key, int x, int y) {
 
 	switch (key)
@@ -586,12 +598,13 @@ void collisionDetection(float (*rocketHit)[2]) {
 	
 	bool collide = false;
 
-	//first, check for checkpoint
+	//prima controllo il checkpoint
 	collide = circlePolygonCollision(posCheck[0], posCheck[1], 25.0, rocketHit, 5);
 
 	if (collide) 
 		win = true;
 	
+	//poi, controllo i pianeti
 	else {
 		for (int i = 0; i < 7 && !collide; i++) {
 			collide = circlePolygonCollision(InfoPlanets[i].posx, InfoPlanets[i].posy, InfoPlanets[i].scale, rocketHit, 5);
@@ -612,6 +625,7 @@ void update(int a)
 {
 	bool moving = false;
 
+	//prima di tutto controllo che l'hitbox non abbia una collision detection
 	float newRocketHitbox[5][2];
 	calculateRocketHitbox(newRocketHitbox);
 
@@ -623,6 +637,7 @@ void update(int a)
 		printf("Win!\n");
 	}
 
+	//se non vi è stata nessun tipo di collisione, aggiorno velocità e angolo di movimento del razzo
 	if (pressing_left)
 	{
 		HorizontalVelocity -= 1;
@@ -687,6 +702,10 @@ void update(int a)
 	posxRocket += HorizontalVelocity;
 	posyRocket += VerticalVelocity;
 	//printf("Position: %d, %d\n", posxRocket, posyRocket);
+
+	//se arrivo ai bordi dello schermo, il razzo "rimbalza"
+	//la sua velocità viene dimezzata, invertendo la direzione
+	//l'angolo, invece si azzera
 	if (posxRocket < 0) {
 		posxRocket = 0;
 		HorizontalVelocity = -HorizontalVelocity * 0.5;
@@ -729,7 +748,8 @@ void update(int a)
 
 void updatePlanetMovement(int a) {
 
-	//la posizione del pianeta aumenta di 1 ogni 50 ms, la velocità è costante (1/50 pixel/ms)
+	//la velocità del pianeta è costante e la sua posizione varia di +-1 ad ogni update
+	//una volta raggiunto un certo delta dalla posizione iniziale, la direzione di movimento viene invertita
 	for (int i = 0; i < currentPlanets; i++) {
 
 		if (InfoPlanets[i].posx == positions[i][0] + delta || InfoPlanets[i].posx == positions[i][0] - delta) {
@@ -749,10 +769,11 @@ void updatePlanetMovement(int a) {
 
 void updateStarMovement(int a) {
 	
+	//il "movimento" delle stelle è semplicemente di ingrandimento e riduzione del punto disegnato (scala)
 	for (int i = 0; i < currentStars; i++) {
 
 		if (InfoStars[i].size == 6 || InfoStars[i].size == 3) {
-			//inverto la direzione di modifica dell'alfa
+			//inverto la direzione di modifica della dimensione
 			InfoStars[i].dir = -1 * InfoStars[i].dir;
 		}
 

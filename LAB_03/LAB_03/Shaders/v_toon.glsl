@@ -4,6 +4,7 @@
 layout (location = 0) in vec3 aPos;
 layout (location = 1) in vec3 aNormal;
 
+//parameters passed to fragment shader
 out vec3 N;
 out vec3 L;
 out vec3 E;

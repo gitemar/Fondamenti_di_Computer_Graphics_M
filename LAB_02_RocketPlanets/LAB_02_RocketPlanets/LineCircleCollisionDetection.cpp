@@ -2,18 +2,21 @@
 #include <stdio.h>
 #include "LineCircleCollisionDetection.h"
 
+//collisione tra poligono che rappresenta l'hitbox e il cerchio 
 bool circlePolygonCollision(float cx, float cy, float cr, float(*polygonPoints)[2], float nPoints) {
 
 	int i;
 	bool collision = false;
 
-	//first check if point is touching/inside the circle
+	//prima di tutto, controllo che uno dei vertici non collidaccon il cerchio (distanza minore o uguale al raggio)
 	for (i = 0; i < nPoints && !collision; i++) {
 		if (circlePointCollision(cx, cy, cr, polygonPoints[i])) {
 			collision = true;
 		}
 	}
 
+	//la collisione del poligono può essere semplificata con la collisione dei segmenti che costituiscono i suoi lati
+	//quindi, per ogni lato effettua la circleSegmentCollision
 	if (!collision) {
 		for (i = 0; i < nPoints && !collision; i++) {
 
@@ -34,7 +37,7 @@ bool circlePolygonCollision(float cx, float cy, float cr, float(*polygonPoints)[
 	return collision;
 }
 
-
+//collisione tra punto e cerchio 
 bool circlePointCollision(float cx, float cy, float cr, float* point) {
 
 	float c[2] = { cx, cy };
@@ -48,7 +51,8 @@ bool circlePointCollision(float cx, float cy, float cr, float* point) {
 
 }
 
-
+//collisione tra segmento e cerchio: si sfrutta il prodotto scalare per calcolare la distanza PC tra il centro del cerchio
+//e il segmento, si controlla che il punto P appartenga al segmento e si verifica che tale distanza sia minore del raggio
 bool circleSegmentCollision(float cx, float cy, float cr, float* pointA, float* pointB) {
 
 	float segmentLen = dist(pointA, pointB);
@@ -77,6 +81,7 @@ bool circleSegmentCollision(float cx, float cy, float cr, float* pointA, float* 
 
 }
 
+//per verificare se un punto appartiene al segmento
 bool pointOnSegment(float* a, float* b, float* p) {
 
 	float d1 = dist(p, a);
@@ -94,6 +99,7 @@ bool pointOnSegment(float* a, float* b, float* p) {
 }
 
 
+//distanza tra due punti
 float dist(float* p1, float* p2) {
 
 	return sqrt(pow((p1[0] - p2[0]), 2) + pow((p1[1] - p2[1]), 2));

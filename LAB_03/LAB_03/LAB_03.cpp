@@ -122,6 +122,7 @@ glm::vec3 red_plastic_ambient = { 0.1, 0.0, 0.0 }, red_plastic_diffuse = { 0.6, 
 glm::vec3 brass_ambient = { 0.1, 0.06, 0.015 }, brass_diffuse = { 0.78, 0.57, 0.11 }, brass_specular = { 0.99, 0.91, 0.81 }; GLfloat brass_shininess = 27.8f;
 glm::vec3 emerald_ambient = { 0.0215, 0.04745, 0.0215 }, emerald_diffuse = { 0.07568, 0.61424, 0.07568 }, emerald_specular = { 0.633, 0.727811, 0.633 }; GLfloat emerald_shininess = 78.8f;
 glm::vec3 slate_ambient = { 0.02, 0.02, 0.02 }, slate_diffuse = { 0.1, 0.1, 0.1 }, slate_specular{ 0.4, 0.4, 0.4 }; GLfloat slate_shininess = 1.78125f;
+//new material
 glm::vec3 rose_gold_ambient = { 0.1, 0.06, 0.015 }, rose_gold_diffuse = { 0.905, 0.721, 0.513 }, rose_gold_specular = { 0.9,0.8,0.8 }; GLfloat rose_gold_shiness = 80.0f;
 
 typedef struct {
@@ -254,6 +255,7 @@ void init_waving_plane() {
 	objects.push_back(obj4);
 }
 
+//init bunny
 void init_mesh_polygon() {
 	Mesh sphereS = {};
 	//	loadObjFile(MeshDir + "airplane.obj", &sphereS);
@@ -262,8 +264,8 @@ void init_mesh_polygon() {
 	// Object Setup use the light shader and a material for color and light behavior
 	Object obj4 = {};
 	obj4.mesh = sphereS;
-	obj4.material = MaterialType::ROSE_GOLD; // NO_MATERIAL;
-	obj4.shading = ShadingType::PHONG; // GOURAUD; // TOON;
+	obj4.material = MaterialType::RED_PLASTIC; // NO_MATERIAL;
+	obj4.shading = ShadingType::TOON; // GOURAUD; // TOON;
 	obj4.name = "Bunny";
 	obj4.M = glm::scale(glm::translate(glm::mat4(1), glm::vec3(0., 0., -2.)), glm::vec3(2., 2., 2.));
 	objects.push_back(obj4);
@@ -925,6 +927,8 @@ void moveCameraLeft()
 
 void moveCameraRight()
 {
+	//la camera di muove a sinistra, quindi gli oggetti si spostano sulla destra
+	//la direzione di spostamento è lo slide_vector, ortogonale all'upVector
 	glm::vec4 direction = ViewSetup.target - ViewSetup.position;
 	glm::vec3 slide_vector = glm::normalize(glm::cross(glm::vec3(direction), glm::vec3(ViewSetup.upVector)));
 	glm::vec3 lateralIncrement = slide_vector * CAMERA_TRASLATION_SPEED;
@@ -952,10 +956,13 @@ void moveCameraDown()
 
 void modifyModelMatrix(glm::vec3 translation_vector, glm::vec3 rotation_vector, GLfloat angle, GLfloat scale_factor)
 {
+	//first we generate tranformation matrix
 	glm::mat4 translationMat = glm::translate(glm::mat4(1), translation_vector);
 	glm::mat4 scalingMat = glm::scale(glm::mat4(1), glm::vec3(scale_factor));
 	glm::mat4 rotationMat = glm::rotate(glm::mat4(1), glm::radians(angle), rotation_vector);
 	
+	//then, if we are in WCS the order is translationMat * objects[selected_obj].M
+	//otherwise the order is objects[selected_obj].M * translationMat
 	switch (OperationMode) {
 	case TRASLATING:
 		if (objects[selected_obj].name == "light") {

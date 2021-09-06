@@ -1,0 +1,7 @@
+﻿  raytracer_students.cpp
+C:\Users\elena\Documents\GitHub\Fondamenti_di_Computer_Graphics_M\LAB_04\LAB_04\raytracer_students.cpp(154,65): warning C4305: 'argomento': troncamento da 'double' a 'float'
+C:\Users\elena\Documents\GitHub\Fondamenti_di_Computer_Graphics_M\LAB_04\LAB_04\raytracer_students.cpp(155,71): warning C4244: 'argomento': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\elena\Documents\GitHub\Fondamenti_di_Computer_Graphics_M\LAB_04\LAB_04\raytracer_students.cpp(184,64): warning C4305: 'argomento': troncamento da 'double' a 'float'
+C:\Users\elena\Documents\GitHub\Fondamenti_di_Computer_Graphics_M\LAB_04\LAB_04\raytracer_students.cpp(196,66): warning C4305: 'argomento': troncamento da 'double' a 'float'
+C:\Users\elena\Documents\GitHub\Fondamenti_di_Computer_Graphics_M\LAB_04\LAB_04\face.h(52): warning C4715: 'Face::operator[]': non tutti i percorsi di controllo restituiscono un valore
+  LAB_04.vcxproj -> C:\Users\elena\Documents\GitHub\Fondamenti_di_Computer_Graphics_M\LAB_04\Debug\LAB_04.exe
