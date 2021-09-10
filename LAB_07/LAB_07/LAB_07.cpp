@@ -400,10 +400,14 @@ void init_brick_column() {
 	movables.push_back(objects.size() - 1);
 
 	//un'altra colonna (in realtà è lo stesso oggetto duplicato) per vedere le differenze
-	obj.shading = ShadingType::TEXTURE_PHONG; // TODO NORMAL_MAPPING;
-	obj.name = "Brick Wall Normal Mapping";
-	obj.M = glm::scale(glm::translate(glm::mat4(1), glm::vec3(3, 2, -6)), glm::vec3(4., 4., 4.));
-	objects.push_back(obj);
+	Object obj2 = {};
+	obj2.mesh = surface;
+	obj2.diffuseTexID = loadTexture(TextureDir + "brickwall.jpg");
+	obj2.material = MaterialType::SLATE;
+	obj2.shading = ShadingType::TEXTURE_PHONG; // TODO NORMAL_MAPPING;
+	obj2.name = "Brick Wall Texture Mapping";
+	obj2.M = glm::scale(glm::translate(glm::mat4(1), glm::vec3(3, 2, -6)), glm::vec3(4., 4., 4.));
+	objects.push_back(obj2);
 	movables.push_back(objects.size() - 1);
 }
 
@@ -1166,12 +1170,24 @@ void moveCameraBack()
 
 void moveCameraLeft()
 {
-	// SEE Lab_03
+	//la camera di muove a destra, quindi gli oggetti si spostano sulla sinistra
+	//la direzione di spostamento è lo slide_vector, ortogonale all'upVector
+	glm::vec4 direction = ViewSetup.target - ViewSetup.position;
+	glm::vec3 slide_vector = glm::normalize(glm::cross(glm::vec3(direction), glm::vec3(ViewSetup.upVector)));
+	glm::vec3 lateralIncrement = slide_vector * CAMERA_TRASLATION_SPEED;
+	ViewSetup.position -= glm::vec4(lateralIncrement, 0.0);
+	ViewSetup.target -= glm::vec4(lateralIncrement, 0.0);
 }
 
 void moveCameraRight()
 {
-	// SEE Lab_03
+	//la camera di muove a sinistra, quindi gli oggetti si spostano sulla destra
+	//la direzione di spostamento è lo slide_vector, ortogonale all'upVector
+	glm::vec4 direction = ViewSetup.target - ViewSetup.position;
+	glm::vec3 slide_vector = glm::normalize(glm::cross(glm::vec3(direction), glm::vec3(ViewSetup.upVector)));
+	glm::vec3 lateralIncrement = slide_vector * CAMERA_TRASLATION_SPEED;
+	ViewSetup.position += glm::vec4(lateralIncrement, 0.0);
+	ViewSetup.target += glm::vec4(lateralIncrement, 0.0);
 }
 
 void moveCameraUp()
@@ -1194,7 +1210,40 @@ void moveCameraDown()
 
 void modifyModelMatrix(glm::vec3 translation_vector, glm::vec3 rotation_vector, GLfloat angle, GLfloat scale_factor)
 {
-	// SEE LAB_03 se volete potete inserire i tool di trasformazione già implementati 	
+	//first we generate tranformation matrix
+	glm::mat4 translationMat = glm::translate(glm::mat4(1), translation_vector);
+	glm::mat4 scalingMat = glm::scale(glm::mat4(1), glm::vec3(scale_factor));
+	glm::mat4 rotationMat = glm::rotate(glm::mat4(1), glm::radians(angle), rotation_vector);
+
+	//then, if we are in WCS the order is translationMat * objects[selected_obj].M
+	//otherwise the order is objects[selected_obj].M * translationMat
+	switch (OperationMode) {
+	case TRASLATING:
+		if (objects[selected_obj].name == "light") {
+			light.position = light.position + translation_vector;
+			printf("Current light position: %f %f %f", light.position.x, light.position.y, light.position.z);
+		}
+
+		if (TransformMode == OCS)
+			objects[selected_obj].M = objects[selected_obj].M * translationMat;
+		else
+			objects[selected_obj].M = translationMat * objects[selected_obj].M;
+		break;
+	case ROTATING:
+		if (objects[selected_obj].name != "light") {
+			if (TransformMode == OCS)
+				objects[selected_obj].M = objects[selected_obj].M * rotationMat;
+			else
+				objects[selected_obj].M = rotationMat * objects[selected_obj].M;
+		}
+	case SCALING:
+		if (objects[selected_obj].name != "light") {
+			if (TransformMode == OCS)
+				objects[selected_obj].M = objects[selected_obj].M * scalingMat;
+			else
+				objects[selected_obj].M = scalingMat * objects[selected_obj].M;
+		}
+	}
 }
 
 /*

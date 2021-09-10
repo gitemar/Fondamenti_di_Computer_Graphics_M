@@ -1,25 +1,25 @@
 ﻿  LAB_07.cpp
-C:\Users\elena\source\repos\LAB_07\LAB_07\LAB_07.cpp(20,1): warning C4005: '_CRT_SECURE_NO_WARNINGS': ridefinizione macro
-C:\Users\elena\source\repos\LAB_07\LAB_07\LAB_07.cpp : message : vedere la precedente definizione di '_CRT_SECURE_NO_WARNINGS'
-C:\Users\elena\source\repos\LAB_07\LAB_07\LAB_07.cpp(306,9): warning C4101: 'textureID': variabile locale senza riferimenti
-C:\Users\elena\source\repos\LAB_07\LAB_07\LAB_07.cpp(777,31): warning C4305: 'argomento': troncamento da 'double' a 'GLclampf'
-C:\Users\elena\source\repos\LAB_07\LAB_07\LAB_07.cpp(780,20): warning C4018: '<': errata corrispondenza tra signed e unsigned
-C:\Users\elena\source\repos\LAB_07\LAB_07\LAB_07.cpp(881,12): warning C4244: 'inizializzazione': conversione da 'GLfloat' a 'int'. Possibile perdita di dati.
-C:\Users\elena\source\repos\LAB_07\LAB_07\LAB_07.cpp(902,20): warning C4018: '<': errata corrispondenza tra signed e unsigned
-C:\Users\elena\source\repos\LAB_07\LAB_07\LAB_07.cpp(999,47): warning C4244: 'argomento': conversione da 'int' a 'float'. Possibile perdita di dati.
-C:\Users\elena\source\repos\LAB_07\LAB_07\LAB_07.cpp(999,44): warning C4244: 'argomento': conversione da 'int' a 'float'. Possibile perdita di dati.
-C:\Users\elena\source\repos\LAB_07\LAB_07\LAB_07.cpp(1000,57): warning C4244: 'argomento': conversione da 'int' a 'float'. Possibile perdita di dati.
-C:\Users\elena\source\repos\LAB_07\LAB_07\LAB_07.cpp(1000,39): warning C4244: 'argomento': conversione da 'int' a 'float'. Possibile perdita di dati.
-C:\Users\elena\source\repos\LAB_07\LAB_07\LAB_07.cpp(1008,15): warning C4244: 'inizializzazione': conversione da 'double' a 'float'. Possibile perdita di dati.
-C:\Users\elena\source\repos\LAB_07\LAB_07\LAB_07.cpp(1085,37): warning C4018: '<': errata corrispondenza tra signed e unsigned
-C:\Users\elena\source\repos\LAB_07\LAB_07\LAB_07.cpp(1150,35): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
-C:\Users\elena\source\repos\LAB_07\LAB_07\LAB_07.cpp(1151,19): warning C4244: '=': conversione da 'double' a 'T'. Possibile perdita di dati.
+C:\Users\elena\Documents\GitHub\Fondamenti_di_Computer_Graphics_M\LAB_07\LAB_07\LAB_07.cpp(20,1): warning C4005: '_CRT_SECURE_NO_WARNINGS': ridefinizione macro
+C:\Users\elena\Documents\GitHub\Fondamenti_di_Computer_Graphics_M\LAB_07\LAB_07\LAB_07.cpp : message : vedere la precedente definizione di '_CRT_SECURE_NO_WARNINGS'
+C:\Users\elena\Documents\GitHub\Fondamenti_di_Computer_Graphics_M\LAB_07\LAB_07\LAB_07.cpp(306,9): warning C4101: 'textureID': variabile locale senza riferimenti
+C:\Users\elena\Documents\GitHub\Fondamenti_di_Computer_Graphics_M\LAB_07\LAB_07\LAB_07.cpp(781,31): warning C4305: 'argomento': troncamento da 'double' a 'GLclampf'
+C:\Users\elena\Documents\GitHub\Fondamenti_di_Computer_Graphics_M\LAB_07\LAB_07\LAB_07.cpp(784,20): warning C4018: '<': errata corrispondenza tra signed e unsigned
+C:\Users\elena\Documents\GitHub\Fondamenti_di_Computer_Graphics_M\LAB_07\LAB_07\LAB_07.cpp(885,12): warning C4244: 'inizializzazione': conversione da 'GLfloat' a 'int'. Possibile perdita di dati.
+C:\Users\elena\Documents\GitHub\Fondamenti_di_Computer_Graphics_M\LAB_07\LAB_07\LAB_07.cpp(906,20): warning C4018: '<': errata corrispondenza tra signed e unsigned
+C:\Users\elena\Documents\GitHub\Fondamenti_di_Computer_Graphics_M\LAB_07\LAB_07\LAB_07.cpp(1003,47): warning C4244: 'argomento': conversione da 'int' a 'float'. Possibile perdita di dati.
+C:\Users\elena\Documents\GitHub\Fondamenti_di_Computer_Graphics_M\LAB_07\LAB_07\LAB_07.cpp(1003,44): warning C4244: 'argomento': conversione da 'int' a 'float'. Possibile perdita di dati.
+C:\Users\elena\Documents\GitHub\Fondamenti_di_Computer_Graphics_M\LAB_07\LAB_07\LAB_07.cpp(1004,57): warning C4244: 'argomento': conversione da 'int' a 'float'. Possibile perdita di dati.
+C:\Users\elena\Documents\GitHub\Fondamenti_di_Computer_Graphics_M\LAB_07\LAB_07\LAB_07.cpp(1004,39): warning C4244: 'argomento': conversione da 'int' a 'float'. Possibile perdita di dati.
+C:\Users\elena\Documents\GitHub\Fondamenti_di_Computer_Graphics_M\LAB_07\LAB_07\LAB_07.cpp(1012,15): warning C4244: 'inizializzazione': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\elena\Documents\GitHub\Fondamenti_di_Computer_Graphics_M\LAB_07\LAB_07\LAB_07.cpp(1089,37): warning C4018: '<': errata corrispondenza tra signed e unsigned
+C:\Users\elena\Documents\GitHub\Fondamenti_di_Computer_Graphics_M\LAB_07\LAB_07\LAB_07.cpp(1154,35): warning C4244: '=': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\elena\Documents\GitHub\Fondamenti_di_Computer_Graphics_M\LAB_07\LAB_07\LAB_07.cpp(1155,19): warning C4244: '=': conversione da 'double' a 'T'. Possibile perdita di dati.
           with
           [
               T=float
           ]
-C:\Users\elena\source\repos\LAB_07\LAB_07\LAB_07.cpp(1389,21): warning C4018: '<': errata corrispondenza tra signed e unsigned
-C:\Users\elena\source\repos\LAB_07\LAB_07\LAB_07.cpp(1407,21): warning C4018: '<': errata corrispondenza tra signed e unsigned
-C:\Users\elena\source\repos\LAB_07\LAB_07\LAB_07.cpp(1420,20): warning C4018: '<': errata corrispondenza tra signed e unsigned
-C:\Users\elena\source\repos\LAB_07\LAB_07\LAB_07.cpp(1513,20): warning C4018: '<': errata corrispondenza tra signed e unsigned
-  LAB_07.vcxproj -> C:\Users\elena\source\repos\LAB_07\Debug\LAB_07.exe
+C:\Users\elena\Documents\GitHub\Fondamenti_di_Computer_Graphics_M\LAB_07\LAB_07\LAB_07.cpp(1438,21): warning C4018: '<': errata corrispondenza tra signed e unsigned
+C:\Users\elena\Documents\GitHub\Fondamenti_di_Computer_Graphics_M\LAB_07\LAB_07\LAB_07.cpp(1456,21): warning C4018: '<': errata corrispondenza tra signed e unsigned
+C:\Users\elena\Documents\GitHub\Fondamenti_di_Computer_Graphics_M\LAB_07\LAB_07\LAB_07.cpp(1469,20): warning C4018: '<': errata corrispondenza tra signed e unsigned
+C:\Users\elena\Documents\GitHub\Fondamenti_di_Computer_Graphics_M\LAB_07\LAB_07\LAB_07.cpp(1562,20): warning C4018: '<': errata corrispondenza tra signed e unsigned
+  LAB_07.vcxproj -> C:\Users\elena\Documents\GitHub\Fondamenti_di_Computer_Graphics_M\LAB_07\Debug\LAB_07.exe
