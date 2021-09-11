@@ -440,7 +440,7 @@ void init_windows() {
 	obj.shading = ShadingType::TEXTURE_ONLY;
 	obj.name = "Little Window";
 	obj.M = glm::scale(glm::translate(glm::mat4(1), glm::vec3(0, 0, -10)), glm::vec3(0.5, 0.5, 0.2));
-	obj.blended = true; // TODO false -> object solid; true -> object semi-transparent if Blending enabled;
+	obj.blended = true; //false -> object solid; true -> object semi-transparent if Blending enabled;
 	objects.push_back(obj);
 	movables.push_back(objects.size() - 1);
 	transparents.push_back(objects.size() - 1);
@@ -542,7 +542,7 @@ void init() {
 	glCullFace(GL_BACK);	// remove faces facing the background
 	glEnable(GL_LINE_SMOOTH);
 	// Blending set up
-	//TODO enable alpha blending for the windows  --->	
+	//enable alpha blending for the windows	
 	glEnable(GL_BLEND);  
 	// The blending function tells the pipeline how to mix the color of a transparent object with the background.
 	// The factor of the source color is the source color alpha,
@@ -768,11 +768,13 @@ void initShader()
 	// White Grid for reference
 	init_grid();
 
+	//The torus
+	init_torus();
+
 	// white window
 	init_windows();
 
-	//The torus
-	init_torus();
+	
 
 
 }

@@ -50,8 +50,10 @@ void main()
 	//quindi, a parte il diffuse, la matrice composta da T,N,B (matrice del cambio di riferimento) è stata creata per ogni vertice
 	//poi abbiamo scelto di modificare i vettori iniziali e portarli nello spazio tangente (L, E e N)
 	//infatti la normale letta viene utilizzata così com'è
+	
     vec3 lightDir = normalize(TangentLightPos-TangentFragPos);
     float diff = max(dot(normal, lightDir), 0.0);
+	
 	//al posto di material.diffuse, passo il colore della texture (canale rgb)
     vec3 diffuse = light.power * light.color * diff * color;
     
